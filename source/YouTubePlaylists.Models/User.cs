@@ -1,13 +1,23 @@
 ﻿namespace YouTubePlaylists.Models
 {
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     using System.Security.Claims;
     using System.Threading.Tasks;
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
 
-    // You can add User data for the user by adding more properties to your User class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class User : IdentityUser
     {
+        private ICollection<Playlist> playlists;
+        private ICollection<Rating> ratings;
+
+        public User()
+        {
+            this.playlists = new HashSet<Playlist>();
+            this.ratings = new HashSet<Rating>();
+        }
+
         public ClaimsIdentity GenerateUserIdentity(UserManager<User> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
@@ -19,6 +29,34 @@
         public Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User> manager)
         {
             return Task.FromResult(GenerateUserIdentity(manager));
+        }
+
+        [Required]
+        [MinLength(3)]
+        public string FirstName { get; set; }
+
+        [Required]
+        [MinLength(3)]
+        public string LastName { get; set; }
+
+        public string ProfileImageUrl { get; set; }
+
+        public string FacebookUrl { get; set; }
+
+        public string GooglePlusUrl { get; set; }
+
+        public string YouTubeUrl { get; set; }
+
+        public virtual ICollection<Playlist> Playlists
+        {
+            get { return this.playlists; }
+            set { this.playlists = value; }
+        }
+
+        public virtual ICollection<Rating> Ratings
+        {
+            get { return this.ratings; }
+            set { this.ratings = value; }
         }
     }
 }
