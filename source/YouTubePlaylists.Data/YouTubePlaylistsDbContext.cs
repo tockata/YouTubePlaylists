@@ -8,7 +8,7 @@
     public class YouTubePlaylistsDbContext : IdentityDbContext<User>, IYouTubePlaylistsDbContext
     {
         public YouTubePlaylistsDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("YouTubePlaylistsConnection", throwIfV1Schema: false)
         {
         }
 
