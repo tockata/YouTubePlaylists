@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YouTubePlaylists.App", "YouTubePlaylists.App\YouTubePlaylists.App.csproj", "{B06DC4BD-3373-4B17-ABD1-55908FBC858A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YouTubePlaylists.Data", "YouTubePlaylists.Data\YouTubePlaylists.Data.csproj", "{CDBB3B23-64AD-46EC-B73E-69A810B755F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YouTubePlaylists.Models", "YouTubePlaylists.Models\YouTubePlaylists.Models.csproj", "{224B326F-C639-470E-8406-EB8A4624F70A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YouTubePlaylists.Services", "YouTubePlaylists.Services\YouTubePlaylists.Services.csproj", "{F7D727E4-AB9F-44BD-B73B-4DBDDBA0A935}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B06DC4BD-3373-4B17-ABD1-55908FBC858A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B06DC4BD-3373-4B17-ABD1-55908FBC858A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B06DC4BD-3373-4B17-ABD1-55908FBC858A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B06DC4BD-3373-4B17-ABD1-55908FBC858A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDBB3B23-64AD-46EC-B73E-69A810B755F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDBB3B23-64AD-46EC-B73E-69A810B755F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDBB3B23-64AD-46EC-B73E-69A810B755F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDBB3B23-64AD-46EC-B73E-69A810B755F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{224B326F-C639-470E-8406-EB8A4624F70A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{224B326F-C639-470E-8406-EB8A4624F70A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{224B326F-C639-470E-8406-EB8A4624F70A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{224B326F-C639-470E-8406-EB8A4624F70A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7D727E4-AB9F-44BD-B73B-4DBDDBA0A935}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7D727E4-AB9F-44BD-B73B-4DBDDBA0A935}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7D727E4-AB9F-44BD-B73B-4DBDDBA0A935}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7D727E4-AB9F-44BD-B73B-4DBDDBA0A935}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
