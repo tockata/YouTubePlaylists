@@ -7,6 +7,7 @@ namespace YouTubePlaylists.Data.Migrations
         public Configuration()
         {
             this.AutomaticMigrationsEnabled = true;
+            this.AutomaticMigrationDataLossAllowed = true;
             ContextKey = "YouTubePlaylists.Data.YouTubePlaylistsDbContext";
         }
 
