@@ -3,8 +3,7 @@ using System.Web;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using Owin;
-using YouTubePlaylists.App.Models;
+using YouTubePlaylists.Models;
 
 namespace YouTubePlaylists.App.Account
 {
@@ -78,8 +77,8 @@ namespace YouTubePlaylists.App.Account
                     email.Text = loginInfo.Email;
                 }
             }
-        }        
-        
+        }
+
         protected void LogIn_Click(object sender, EventArgs e)
         {
             CreateAndLoginUser();
@@ -93,7 +92,7 @@ namespace YouTubePlaylists.App.Account
             }
             var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
             var signInManager = Context.GetOwinContext().GetUserManager<ApplicationSignInManager>();
-            var user = new ApplicationUser() { UserName = email.Text, Email = email.Text };
+            var user = new User() { UserName = email.Text, Email = email.Text };
             IdentityResult result = manager.Create(user);
             if (result.Succeeded)
             {
@@ -119,9 +118,9 @@ namespace YouTubePlaylists.App.Account
             AddErrors(result);
         }
 
-        private void AddErrors(IdentityResult result) 
+        private void AddErrors(IdentityResult result)
         {
-            foreach (var error in result.Errors) 
+            foreach (var error in result.Errors)
             {
                 ModelState.AddModelError("", error);
             }

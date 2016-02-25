@@ -430,6 +430,20 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\YouTubePlaylists.Data\YouTubePlaylists.Data.csproj">
+      <Project>{cdbb3b23-64ad-46ec-b73e-69a810b755f6}</Project>
+      <Name>YouTubePlaylists.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YouTubePlaylists.Models\YouTubePlaylists.Models.csproj">
+      <Project>{224b326f-c639-470e-8406-eb8a4624f70a}</Project>
+      <Name>YouTubePlaylists.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YouTubePlaylists.Services\YouTubePlaylists.Services.csproj">
+      <Project>{f7d727e4-ab9f-44bd-b73b-4dbddba0a935}</Project>
+      <Name>YouTubePlaylists.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -462,6 +476,14 @@
     <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.1.1\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.1.1\build\Microsoft.Net.Compilers.props'))" />
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
   </Target>
+  
+  <!-- Fix for appharbor deployment -->
+  <PropertyGroup>
+    <PostBuildEvent>
+      if not exist "$(WebProjectOutputDir)\bin\Roslyn" md "$(WebProjectOutputDir)\bin\Roslyn"
+      start /MIN xcopy /s /y /R "$(OutDir)roslyn\*.*" "$(WebProjectOutputDir)\bin\Roslyn"
+    </PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
