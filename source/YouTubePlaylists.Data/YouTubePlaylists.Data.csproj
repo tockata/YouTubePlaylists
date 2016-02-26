@@ -57,7 +57,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\IRepository.cs" />
     <Compile Include="Contracts\IYouTubePlaylistsDbContext.cs" />
+    <Compile Include="GenericRepository.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="YouTubePlaylistsDbContext.cs" />
