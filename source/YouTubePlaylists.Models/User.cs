@@ -2,6 +2,7 @@
 {
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using System.Linq;
     using System.Security.Claims;
     using System.Threading.Tasks;
     using Microsoft.AspNet.Identity;
@@ -46,6 +47,20 @@
         public string GooglePlusUrl { get; set; }
 
         public string YouTubeUrl { get; set; }
+
+        public double Rating
+        {
+            get
+            {
+                if (this.playlists.Count == 0)
+                {
+                    return 0;
+                }
+
+                return this.Playlists
+                    .Sum(p => p.Ratings.Count != 0 ? p.Ratings.Sum(r => r.Value) : 0 / p.Ratings.Count) / this.playlists.Count;
+            }
+        }
 
         public virtual ICollection<Playlist> Playlists
         {
