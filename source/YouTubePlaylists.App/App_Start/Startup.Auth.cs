@@ -1,14 +1,16 @@
-﻿using System;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
-using Microsoft.Owin;
-using Microsoft.Owin.Security.Cookies;
-using Owin;
-using YouTubePlaylists.Data;
-using YouTubePlaylists.Models;
-
-namespace YouTubePlaylists.App
+﻿namespace YouTubePlaylists.App
 {
+    using System;
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.Owin;
+    using Microsoft.Owin;
+    using Microsoft.Owin.Security.Cookies;
+    using Microsoft.Owin.Security.Google;
+    using Owin;
+    using YouTubePlaylists.App.Utilities;
+    using YouTubePlaylists.Data;
+    using YouTubePlaylists.Models;
+
     public partial class Startup
     {
         // For more information on configuring authentication, please visit http://go.microsoft.com/fwlink/?LinkId=301883
@@ -53,15 +55,15 @@ namespace YouTubePlaylists.App
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: ConfigurationUtilities.GetAppSetting("appId"),
+               appSecret: ConfigurationUtilities.GetAppSetting("appSecret"));
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = ConfigurationUtilities.GetAppSetting("ClientId"),
+                ClientSecret = ConfigurationUtilities.GetAppSetting("ClientSecret")
+            });
         }
     }
 }

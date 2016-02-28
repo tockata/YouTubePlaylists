@@ -92,7 +92,14 @@ namespace YouTubePlaylists.App.Account
             }
             var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
             var signInManager = Context.GetOwinContext().GetUserManager<ApplicationSignInManager>();
-            var user = new User() { UserName = email.Text, Email = email.Text };
+            var user = new User()
+            {
+                UserName = username.Text,
+                Email = email.Text,
+                FirstName = firstName.Text,
+                LastName = lastName.Text
+            };
+
             IdentityResult result = manager.Create(user);
             if (result.Succeeded)
             {
