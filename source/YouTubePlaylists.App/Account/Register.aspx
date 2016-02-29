@@ -16,6 +16,8 @@
                 <asp:TextBox runat="server" ID="Username" CssClass="form-control" />
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="Username"
                     CssClass="text-danger" ErrorMessage="The username field is required." />
+                <asp:RegularExpressionValidator runat="server" ControlToValidate="Username" ValidationExpression=".{3}.*"
+                    CssClass="text-danger" ErrorMessage="The username minimum length is 3 characters." />
             </div>
         </div>
         <div class="form-group">
@@ -32,6 +34,8 @@
                 <asp:TextBox runat="server" ID="FirstName" CssClass="form-control" />
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="FirstName"
                     CssClass="text-danger" ErrorMessage="The first name field is required." />
+                <asp:RegularExpressionValidator runat="server" ControlToValidate="FirstName" ValidationExpression=".{3}.*"
+                    CssClass="text-danger" ErrorMessage="First name minimum length is 3 characters." />
             </div>
         </div>
         <div class="form-group">
@@ -40,6 +44,8 @@
                 <asp:TextBox runat="server" ID="LastName" CssClass="form-control" />
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="LastName"
                     CssClass="text-danger" ErrorMessage="The last name field is required." />
+                <asp:RegularExpressionValidator runat="server" ControlToValidate="LastName" ValidationExpression=".{3}.*"
+                    CssClass="text-danger" ErrorMessage="Last name minimum length is 3 characters." />
             </div>
         </div>
         <div class="form-group">
