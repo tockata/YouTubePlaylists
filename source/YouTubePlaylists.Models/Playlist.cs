@@ -4,6 +4,7 @@
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
+    using System.Linq;
 
     public class Playlist
     {
@@ -39,6 +40,19 @@
 
         [ForeignKey("CreatorId")]
         public virtual User Creator { get; set; }
+
+        public double Rating
+        {
+            get
+            {
+                if (this.ratings.Count() == 0)
+                {
+                    return 0;
+                }
+                return this.ratings
+                    .Average(r => r.Value);
+            }
+        }
 
         public virtual ICollection<Video> Videos
         {

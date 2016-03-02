@@ -58,7 +58,7 @@
                 }
 
                 return this.Playlists
-                    .Sum(p => p.Ratings.Count != 0 ? p.Ratings.Sum(r => r.Value) : 0 / p.Ratings.Count) / this.playlists.Count;
+                    .Average(p => p.Ratings.Count != 0 ? p.Ratings.Average(r => r.Value) : 0);
             }
         }
 
