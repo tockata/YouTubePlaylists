@@ -245,6 +245,8 @@
     <Content Include="Account\Web.config" />
     <Content Include="ErrorPage.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="HttpErrorPage.aspx" />
+    <Content Include="PlaylistDetails.aspx" />
     <Content Include="Private\CreatePlaylist.aspx" />
     <Content Include="Private\MyPlaylists.aspx" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
@@ -454,8 +456,23 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="HttpErrorPage.aspx.cs">
+      <DependentUpon>HttpErrorPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HttpErrorPage.aspx.designer.cs">
+      <DependentUpon>HttpErrorPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ViewModels\PlaylistDetailsViewModel.cs" />
     <Compile Include="Models\ViewModels\PlaylistHomePageViewModel.cs" />
+    <Compile Include="PlaylistDetails.aspx.cs">
+      <DependentUpon>PlaylistDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PlaylistDetails.aspx.designer.cs">
+      <DependentUpon>PlaylistDetails.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Private\CreatePlaylist.aspx.cs">
       <DependentUpon>CreatePlaylist.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

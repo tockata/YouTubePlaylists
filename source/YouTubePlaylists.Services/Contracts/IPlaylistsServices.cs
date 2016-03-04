@@ -6,5 +6,7 @@
     public interface IPlaylistsServices
     {
         IQueryable<Playlist> GetTop(int count);
+
+        Playlist GetById(int id);
     }
 }

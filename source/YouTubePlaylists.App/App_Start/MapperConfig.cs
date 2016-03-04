@@ -18,6 +18,14 @@
                         p => p.Videos.FirstOrDefault()
                             .Url
                             .Substring(p.Videos.FirstOrDefault().Url.IndexOf("=") + 1)));
+
+            Mapper.CreateMap<Playlist, PlaylistDetailsViewModel>()
+                .ForMember(p => p.CreatorName, opt => opt.MapFrom(p => p.Creator.FirstName + " " + p.Creator.LastName))
+                .ForMember(p => p.Rating, opt => opt.MapFrom(p => p.Ratings.Average(r => r.Value)))
+                .ForMember(p => p.Category, opt => opt.MapFrom(p => p.Category.Name))
+                .ForMember(
+                    p => p.VideoUrls, opt => opt.MapFrom(
+                        p => p.Videos.Select(v => v.Url.Substring(v.Url.IndexOf("=") + 1))));
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿namespace YouTubePlaylists.Services
 {
+    using System;
     using System.Data.Entity;
     using System.Linq;
     using Contracts;
@@ -26,6 +27,11 @@
                 .Take(count);
 
             return playlists;
+        }
+
+        public Playlist GetById(int id)
+        {
+            return this.playlists.Find(id);
         }
     }
 }

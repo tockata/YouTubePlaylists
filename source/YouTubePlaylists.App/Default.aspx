@@ -8,7 +8,7 @@
             SelectMethod="rpPopularPlaylists_GetData">
             <ItemTemplate>
                 <div class="col-md-6">
-                    <h3><%#: Item.Title %> by <i><a href="UserInfo.aspx?username=<%# Item.Creator %>"><%#: Item.Creator %></a></i></h3>
+                    <h3><a href="PlaylistDetails.aspx?id=<%# Item.Id %>"><%#: Item.Title %></a> by <i><a href="UserDetails.aspx?username=<%# Item.Creator %>"><%#: Item.Creator %></a></i></h3>
                     <p>Rating: <%# Item.Rating %></p>
                     <p>Category: <i><a href="Category.aspx?id=<%# Item.CategoryId %>"><%#: Item.Category %></a></i></p>
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/<%# Item.FirstVideoId %>" frameborder="0" allowfullscreen></iframe>
