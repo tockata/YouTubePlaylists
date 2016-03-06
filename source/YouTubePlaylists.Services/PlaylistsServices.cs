@@ -1,6 +1,5 @@
 ﻿namespace YouTubePlaylists.Services
 {
-    using System;
     using System.Data.Entity;
     using System.Linq;
     using Contracts;
@@ -31,7 +30,13 @@
 
         public Playlist GetById(int id)
         {
-            return this.playlists.Find(id);
+            return this.playlists.All()
+                .Where(p => p.Id == id)
+                .Include(p => p.Creator)
+                .Include(p => p.Ratings)
+                .Include(p => p.Category)
+                .Include(p => p.Videos)
+                .FirstOrDefault();
         }
     }
 }

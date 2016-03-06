@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
-using YouTubePlaylists.Models;
-
-namespace YouTubePlaylists.App.Models.ViewModels
+﻿namespace YouTubePlaylists.App.Models.ViewModels
 {
+    using System;
+    using System.Collections.Generic;
+    using YouTubePlaylists.Models;
+
     public class PlaylistDetailsViewModel
     {
         public int Id { get; set; }
@@ -11,7 +12,11 @@ namespace YouTubePlaylists.App.Models.ViewModels
 
         public string Description { get; set; }
 
+        public string CreatorUsername { get; set; }
+
         public string CreatorName { get; set; }
+
+        public DateTime CreatedAt { get; set; }
 
         public double Rating { get; set; }
 

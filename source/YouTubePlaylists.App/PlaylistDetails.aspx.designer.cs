@@ -13,12 +13,12 @@ namespace YouTubePlaylists.App {
     public partial class PlaylistDetails {
         
         /// <summary>
-        /// dvPlaylistDetails control.
+        /// fvPlaylistDetails control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DetailsView dvPlaylistDetails;
+        protected global::System.Web.UI.WebControls.FormView fvPlaylistDetails;
     }
 }
